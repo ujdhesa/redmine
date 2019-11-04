@@ -1,0 +1,6 @@
+# Sample plugin
+en:
+  label_plugin_example: Shembull Shtojce
+  label_meeting_plural: Takime
+  text_say_hello: Shtojca thotë 'Tungjatjeta'
+  text_say_goodbye: Shtojca thotë 'Mirupafshim'

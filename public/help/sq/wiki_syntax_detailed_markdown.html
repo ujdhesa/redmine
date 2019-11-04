@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sq">
+<head>
+<title>RedmineWikiFormatting (Markdown)</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../wiki_syntax_detailed.css" />
+</head>
+
+<body>
+<h1><a name="1" class="wiki-page"></a>Formatim Wiki (Markdown)</h1>
+
+    <ul class='toc'>
+        <li><a href='#2'>Lidhje</a></li>
+        <ul>
+            <li><a href='#3'>Lidhje Redmine</a></li>
+            <li><a href='#4'>Lidhje të Jashtme</a></li>
+        </ul>
+        <li><a href='#5'>Formatim teksti</a></li>
+        <ul>
+            <li><a href='#6'>Stil shkronjash</a></li>
+            <li><a href='#7'>Figura brendazi</a></li>
+            <li><a href='#8'>Tituj</a></li>
+            <li><a href='#10'>Blloqe citimesh</a></li>
+            <li><a href='#11'>Tryezë e lëndës</a></li>
+            <li><a href='#14'>Vizore Horizontale</a></li>
+        </ul>
+        <li><a href='#12'>Makro</a></li>
+        <li><a href='#13'>Theksim kodi</a></li>
+    </ul>
+
+    <h2><a name="2" class="wiki-page"></a>Lidhje</h2>
+
+        <h3><a name="3" class="wiki-page"></a>Lidhje Redmine</h3>
+
+        <p>Redmine lejon krijim lidhjesh mes burimesh (çështje, grupe ndryshimesh, faqe wiki…) prej ngado ku përdoret formatim wiki.</p>
+        <ul>
+            <li>Lidhje për te një çështje: <strong>#124</strong> (shfaq <del><a href="#" class="issue" title="bulk edit doesn't change the category or fixed version properties (Closed)">#124</a></del>, lidhja është me vijë përsipër, nëse çështja është mbyllur)</li>
+            <li>Lidhje për te një çështje, përfshi emër dhe subjekt ndjekësi: <strong>##124</strong> (shfaq <a href="#" class="issue" title="bulk edit doesn't change the category or fixed version properties (New)">të Metën #124</a>: bulk edit doesn't change the category or fixed version properties)</li>
+            <li>Lidhje për te një shënim çështjeje: <strong>#124-6</strong>, ose <strong>#124#note-6</strong></li>
+            <li>Lidhje për te një shënim çështjeje brenda të njëjtës çështje: <strong>#note-6</strong></li>
+        </ul>
+
+        <p>Lidhje Wiki:</p>
+
+        <ul>
+            <li><strong>[[Udhërrëfyes]]</strong> shfaq një lidhje për te faqja e quajtur 'Udhërrëfyes': <a href="#" class="wiki-page">Udhërrëfyes</a></li>
+            <li><strong>[[Guide#lexim-më-tej]]</strong> ju shpie te spiranca "lexim-më-tej". Kryet përfitojnë spiranca të caktuara automatikisht, që të mund t’ju referoheni: <a href="#" class="wiki-page">Udhërrëfyes</a></li>
+            <li><strong>[[#lexim-më-tej]]</strong> lidhet te spiranca "lexim-më-tej" i faqes së tanishme: <a href="#" class="wiki-page">#lexim-më-tej</a></li>
+            <li><strong>[[Udhërrëfyes|Doracak përdoruesi]]</strong> shfaq një lidhje te po ajo faqe, por me një tekst tjetër: <a href="#" class="wiki-page">Doracak përdoruesi</a></li>
+        </ul>
+
+        <p>Mund të krijoni lidhje edhe te faqe prej një projekti tjetër wiki:</p>
+
+        <ul>
+            <li><strong>[[bankëprovë:njëfarë faqeje]]</strong> shfaq një lidhje për te faqja e quajtur 'Njëfarë faqeje' e wiki-it Bankëprovë</li>
+            <li><strong>[[bankëprovë:]]</strong> shfaq një lidhje për te faqja kryesore wiki Bankëprovë</li>
+        </ul>
+
+        <p>Lidhjet Wiki shfaqen të kuqe, nëse faqja s’ekziston ende, p.sh.,: <a href="#" class="wiki-page new">Faqe që s’ekziston</a>.</p>
+
+        <p>Lidhje te burime të tjera:</p>
+
+        <ul>
+            <li>Dokumente:
+                <ul>
+                    <li><strong>document#17</strong> (lidhje te dokumenti me id-në 17)</li>
+                    <li><strong>document:Përshëndetje</strong> (lidhje te dokumenti me titull "Përshëndetje")</li>
+                    <li><strong>document:"Njëfarë dokumenti"</strong> (thonjëzat dyshe mund të përdoren kur titulli i dokumentit përmban hapësira)</li>
+                    <li><strong>bankëprovë:document:"Njëfarë dokumenti"</strong> (lidhje për te një dokument me titull "Njëfarë dokumenti" në një projekt tjetër "bankëprovë")</li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul>
+            <li>Versione:
+                <ul>
+                    <li><strong>version#3</strong> (lidhje për te versioni me id 3)</li>
+                    <li><strong>version:1.0.0</strong> (lidhje për te versioni i quajtur "1.0.0")</li>
+                    <li><strong>version:"1.0 beta 2"</strong></li>
+                    <li><strong>bankëprovë:version:1.0.0</strong> (lidhje për te versioni "1.0.0" te projekti "bankëprovë")</li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul>
+            <li>Bashkëngjitje:
+                <ul>
+                    <li><strong>attachment:kartelë.zip</strong> (lidhje për te bashkëngjitja e objektit të tanishëm të quajtur kartelë.zip)</li>
+                    <li>Hëpërhë, mund të referencohen vetëm bashkëngjitjet e objektit të tanishëm (nëse gjendeni në një çështje, është e mundur të referencohen bashkëngjitje të kësaj çështjeje vetëm)</li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul>
+            <li>Grupe ndryshimesh:
+                <ul>
+                    <li><strong>r758</strong>                       (lidhje te një grup ndryshimesh)</li>
+                    <li><strong>commit:c6f4d0fd</strong>            (lidhje te një grup ndryshimesh me një hash jo numerik)</li>
+                    <li><strong>svn1|r758</strong>                  (lidhje te një grup ndryshimesh të një depoje specifike, për projekte me shumë depo)</li>
+                    <li><strong>commit:hg|c6f4d0fd</strong>         (lidhje te një grup ndryshimesh me një hash jo numerik të një depoje specifike)</li>
+                    <li><strong>bankëprovë:r758</strong>               (lidhje te një grup ndryshimesh të një projekti tjetër)</li>
+                    <li><strong>bankëprovë:commit:c6f4d0fd</strong>    (lidhje te një grup ndryshimesh me një hash jo numerik të një projekti tjetër)</li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul>
+             <li>Kartela depoje:
+                <ul>
+                    <li><strong>source:njëfarë/kartele</strong>           (lidhje te kartela e gjendur te /njëfarë/kartele në depon e projektit)</li>
+                    <li><strong>source:njëfarë/kartele@52</strong>        (lidhje te rishikimi 53 i kartelës)</li>
+                    <li><strong>source:njëfarë/kartele#L120</strong>      (lidhje te rreshti 120 i kartelës)</li>
+                    <li><strong>source:njëfarë/kartele@52#L120</strong>   (lidhje te rreshti 120 i rishikimit 52 të kartelës)</li>
+                    <li><strong>source:"njëfarë/kartele@52#L120"</strong> (kur URL-ja përmban hapësira, përdorni thonjëza dyshe</li>
+                    <li><strong>export:njëfarë/kartele</strong>           (detyro shkarkimin e kartelës)</li>
+                    <li><strong>source:svn1|njëfarë/kartele</strong>      (lidhje te një kartelë e një depoje specifike, për projekte me shumë depo)</li>
+                    <li><strong>bankëprovë:source:njëfarë/kartele</strong>   (lidhje te kartela e gjendur te /njëfarë/kartele në depon e projektit "bankëprovë")</li>
+                    <li><strong>bankëprovë:export:njëfarë/kartele</strong>   (detyro shkarkimin e kartelës)</li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul>
+            <li>Forume:
+                <ul>
+                    <li><strong>forum#1</strong> (lidhje për te forumi me id 1</li>
+                    <li><strong>forum:Asistencë</strong> (lidhje për te forumi i quajtur Asistencë)</li>
+                    <li><strong>forum:"Asistencë Teknike"</strong> (përdorni thonjëza dyshe, nëse emri i forumit përmban hapësira)</li>              </ul>
+            </li>
+        </ul>
+
+        <ul>
+            <li>Mesazhe forumi:
+                <ul>
+                    <li><strong>message#1218</strong> (lidhje te mesazhi me id 1218)</li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul>
+            <li>Projekte:
+                <ul>
+                    <li><strong>project#3</strong> (lidhje te projekti me id 3)</li>
+                    <li><strong>project:njëfarë-projekti</strong> (lidhje te projekti me emrin ose identifikusin "njëfarë-projekti")</li>
+                    <li><strong>project:Njëfarë Projekti"</strong> (për emra projektesh që përmbajnë hapësira përdorni thonjëza dyshe)</li>
+                </ul>
+             </li>
+        </ul>
+
+        <ul>
+            <li>Lajm:
+                <ul>
+                    <li><strong>news#2</strong> (lidhje te artikull lajmesh me id 2)</li>
+                    <li><strong>news:Përshëndetje</strong> (lidhje te artikull lajmesh të quajtur "Përshëndetje")</li>
+                    <li><strong>news:"Hedhja e Parë Në Qarkullim"</strong> (për emra artikujsh lajmesh që përmbajnë hapësira përdorni thonjëza)</li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul>
+            <li>Përdorues:
+                <ul>
+                    <li><strong>user#2</strong> (lidhje te përdoruesi me id id 2)</li>
+                    <li><strong>user:kaqoli</strong> (Lidhje te përdoruesi me emër përdoruesi kaqoli)</li>
+                    <li><strong>@kaqoli</strong> (Lidhje te përdoruesi me emër përdoruesi kaqoli)</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p><em>Escaping</em>:</p>
+
+        <ul>
+            <li>Mund të pengoni përtypjen e lidhjeve Redmine duke i paraprirë ato me një pikëçuditje: !</li>
+        </ul>
+
+
+        <h3><a name="4" class="wiki-page"></a>Lidhje të jashtme</h3>
+
+        <p>URL-ra (ç’fillon me: www, http, https, ftp, ftps, sftp dhe sftps) dhe adresa email shndërrohen vetvetiu në lidhje të klikueshme:</p>
+
+<pre>
+http://www.redmine.org, dikush@foo.bar
+</pre>
+
+        <p>shfaq: <a class="external" href="http://www.redmine.org">http://www.redmine.org</a>, <a href="mailto:someone@foo.bar" class="email">dikush@foo.bar</a></p>
+
+        <p>Nëse doni të shfaqni një tekst të caktuar, në vend se URL-në, mund të përdorni sintaksën standarde <em>Markdown</em>:</p>
+
+<pre>
+[Sajti Redmine](http://www.redmine.org)
+</pre>
+
+        <p>shfaq: <a href="http://www.redmine.org" class="external">Sajti Redmine</a></p>
+
+
+    <h2><a name="5" class="wiki-page"></a>Formatim teksti</h2>
+
+
+    <p>Për gjëra të tilla si kryetituj, të trasha, tabela, lista, Redmine mbulon sintaksën Markdown.   Për të dhëna mbi përdorimin e cilësdo prej këtyre veçorive, shihni <a class="external" href="http://daringfireball.net/projects/markdown/syntax">http://daringfireball.net/projects/markdown/syntax</a>.  Një dorë shembujsh jepen më poshtë, por mekanizmi është i aftë për shumë më tepër se kaq.</p>
+
+        <h3><a name="6" class="wiki-page"></a>Stil shkronjash</h3>
+
+<pre>
+* **të trasha**
+* *Të pjerrëta*
+* ***të trasha të pjerrëta***
+* _të nënvizuara_
+* ~~hequrvije~~
+</pre>
+
+        <p>shfaq:</p>
+
+        <ul>
+            <li><strong>të trasha</strong></li>
+            <li><em>të pjerrëta</em></li>
+            <li><em><strong>të trasha të pjerrëta</strong></em></li>
+            <li><u>të nënvizuara</u></li>
+            <li><del>hequrvije</del></li>
+        </ul>
+
+        <h3><a name="7" class="wiki-page"></a>Figura brendazi</h3>
+
+        <ul>
+            <li><strong>![](image_url)</strong> shfaq një figurë të gjendur te image_url (sintaksë Markdown)</li>
+            <li>Nëse keni një figurë të bashkëngjitur te faqja juaj wiki, mund të shfaqet brendazi duke përdorur emrin e kartelës për të: <strong>![](figura_bashkëngjitur)</strong></li>
+            <li>Figura në të papastrën e kompjuterit tuaj mund të ngjiten drejtpërsëdrejti duke përdorur Ctrl-v ose Command-v.</li>
+            <li>Kartela figurash mund të tërhiqen te fusha e teksteve që të mund të ngarkohen dhe trupëzohen.</li>
+        </ul>
+
+        <h3><a name="8" class="wiki-page"></a>Tituj</h3>
+
+<pre>
+# Titull
+## Nëntitull
+### Nënnëntitull
+</pre>
+
+        <p>Redmine u cakton një spirancë secilit prej këtyre titujve, kështu që mund t’i lidhni me "#Titull", "#Nëntitull" e me radhë.</p>
+
+
+        <h3><a name="10" class="wiki-page"></a>Blloqe citimesh</h3>
+
+        <p>Niseni paragrafin me <strong>&gt;</strong></p>
+
+<pre>
+&gt; Rails është një platformë e plotë për zhvillim aplikacionesh web ngritur mbi bazë të dhënash sipas rregullsisë Model-Parje-Kontrol.
+Për të shfaqur sajtin, krejt ç’ju duhet është një bazë të dhënash dhe një shërbyes.
+</pre>
+
+        <p>Shfaq:</p>
+
+        <blockquote>
+                <p>Rails është një platformë e plotë për zhvillim aplikacionesh web ngritur mbi bazë të dhënash sipas rregullsisë Model-Parje-Kontrol. Për të shfaqur sajtin, krejt ç’ju duhet është një bazë të dhënash dhe një shërbyes.</p>
+        </blockquote>
+
+
+        <h3><a name="11" class="wiki-page"></a>Tryezë lënde</h3>
+
+<pre>
+{{toc}} =&gt; tl e vendosur majtas
+{{&gt;toc}} =&gt; tl e vendosur djathtas
+</pre>
+
+        <h3><a name="14" class="wiki-page"></a>Vizore Horizontale</h3>
+
+<pre>
+---
+</pre>
+
+    <h2><a name="12" class="wiki-page"></a>Makro</h2>
+
+    <p>Redmine përmban makrot e brendshme vijuese:</p>
+
+    <p>
+    <dl>
+      <dt><code>hello_world</code></dt>
+      <dd><p>Shembull makroje.</p></dd>
+
+      <dt><code>macro_list</code></dt>
+      <dd><p>Shfaq një listë të krejt makrove të gatshme, përfshi përshkrimet përkatëse, në pastë.</p></dd>
+
+      <dt><code>child_pages</code></dt>
+      <dd><p>Shfaq një listë të faqeve pjella. Pa ndonjë argument, shfaq faqet pjella të faqes së tanishme wiki. Shembuj:</p>
+      <pre><code>{{child_pages}} -- mund të përdoren vetëm që prej një faqeje wiki
+{{child_pages(depth=2)}} -- shfaq vetëm 2 shkallë të folezëzimit</code></pre></dd>
+
+      <dt><code>include</code></dt>
+      <dd><p>Përfshini një faqe wiki. Shembull:</p>
+      <pre><code>{{include(Foo)}}</code></pre>
+      <p>ose, për të përfshirë një faqe të një projekti specifik:</p>
+      <pre><code>{{include(projectname:Foo)}}</code></pre></dd>
+
+      <dt><code>collapse</code></dt>
+      <dd><p>Fut bllok teksti të tkurrur. Shembull:</p>
+      <pre><code>{{collapse(Shihni hollësitë…)
+Ky është një bllok teksti që, si parazgjedhje, është tkurrur.
+Mund të zgjerohet duke klikuar mbi një lidhje.
+}}</code></pre></dd>
+
+      <dt><code>thumbnail</code></dt>
+      <dd><p>Shfaq një miniaturë të klikueshme të një figure të bashkëngjitur. Shembull:</p>
+      <pre>{{thumbnail(image.png)}}
+{{thumbnail(image.png, size=300, title=Thumbnail)}}</pre></dd>
+
+      <dt><code>issue</code></dt>
+      <dd><p>Fut një lidhje te një çështje, me një tekst të zhdërvjellët. Shembuj:</p>
+      <pre>{{issue(123)}}                              -- Çështja #123: Thellim aftësish makrosh
+{{issue(123, project=true)}}                -- Andromeda - Çështja #123:Thellim aftësish makrosh
+{{issue(123, tracker=false)}}               -- #123: Thellim aftësish makrosh
+{{issue(123, subject=false, project=true)}} -- Andromeda - Çështja #123</pre></dd>
+    </dl>
+    </p>
+
+    <h2><a name="13" class="wiki-page"></a>Theksim kodi</h2>
+
+    <p>Theksimi parazgjedhje i kodit bazohet në <a href="http://rouge.jneen.net/" class="external">Rouge</a>, një librari theksimi sintakse, shkruar 100% në Ruby. Mbulon mjaft nga gjuhët e përdorura rëndom, të tilla si <strong>c</strong>, <strong>cpp</strong> (c++), <strong>csharp</strong> (c#, cs), <strong>css</strong>, <strong>diff</strong> (patch, udiff), <strong>go</strong> (golang), <strong>groovy</strong>, <strong>html</strong>, <strong>java</strong>, <strong>javascript</strong> (js), <strong>kotlin</strong>, <strong>objective_c</strong> (objc), <strong>perl</strong> (pl), <strong>php</strong>, <strong>python</strong> (py), <strong>r</strong>, <strong>ruby</strong> (rb), <strong>sass</strong>, <strong>scala</strong>, <strong>shell</strong> (bash, zsh, ksh, sh), <strong>sql</strong>, <strong>swift</strong>, gjuhë <strong>xml</strong> dhe <strong>yaml</strong> (yml), ku emrat brenda kllapash janë aliase. Për listën e plotë të gjuhëve të mbuluara, ju lutemi, referojuni <a href="https://www.redmine.org/projects/redmine/wiki/RedmineCodeHighlightingLanguages" class="external">https://www.redmine.org/projects/redmine/wiki/RedmineCodeHighlightingLanguages</a>.</p>
+
+    <p>Mund të theksoni kod në çfarëdo vendi që mbulon formatim wiki duke përdorur këtë sintaksë (kini parasysh që emri ose aliasi për gjuhën s’varet nga shkrimi me të madhe apo të vogël):</p>
+
+<pre>
+``` ruby
+  Vendosni këtu kodin tuaj.
+```
+</pre>
+
+    <p>Shembull:</p>
+
+<pre><code class="ruby syntaxhl"><span class="c1"># The Greeter class</span>
+<span class="k">class</span> <span class="nc">Greeter</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span><span class="p">.</span><span class="nf">capitalize</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">salute</span>
+    <span class="nb">puts</span> <span class="s2">"Hello </span><span class="si">#{</span><span class="vi">@name</span><span class="si">}</span><span class="s2">!"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</body>
+</html>
